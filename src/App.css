@@ -1,0 +1,10 @@
+.App {
+  margin: 10px 10px;
+  width: calc(100% - 20px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.App > div {
+  width: 49%;
+}
