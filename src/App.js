@@ -2,16 +2,17 @@ import './App.css';
 import Hello from './index.tsx'
 import img1 from './img/1.jpeg'
 import img2 from './img/2.jpeg'
+import video from './img/a.mp4'
 
 const images1 = [
-  "https://castdj-comingsoon.s3.amazonaws.com/khanhviet12121/posts/Screen_Recording_2021_06_20_at_09_51_54_572c1e6936.mov",
+  video,
 ];
 const images2 = [
-  "https://castdj-comingsoon.s3.amazonaws.com/khanhviet12121/posts/Screen_Recording_2021_06_20_at_09_51_54_572c1e6936.mov",
+  video,
   img1
 ];
 const images3 = [
-  "https://castdj-comingsoon.s3.amazonaws.com/khanhviet12121/posts/Screen_Recording_2021_06_20_at_09_51_54_572c1e6936.mov",
+  video,
   img2,
   img1,
 ];
@@ -22,14 +23,14 @@ const images4 = [
   "https://castdj-comingsoon.s3.amazonaws.com/khanhviet12121/posts/Sample_Video_1280x720_1mb_ffa3a53275.mp4",
 ];
 const images5 = [
-  "https://castdj-comingsoon.s3.amazonaws.com/khanhviet12121/posts/Screen_Recording_2021_06_20_at_09_51_54_572c1e6936.mov",
+  video,
   img2,
   "https://castdj-comingsoon.s3.amazonaws.com/khanhviet12121/posts/Sample_Video_1280x720_1mb_ffa3a53275.mp4",
   img1,
   "https://castdj-comingsoon.s3.amazonaws.com/khanhviet12121/posts/Sample_Video_1280x720_1mb_ffa3a53275.mp4",
 ];
 const images6 = [
-  "https://castdj-comingsoon.s3.amazonaws.com/khanhviet12121/posts/Screen_Recording_2021_06_20_at_09_51_54_572c1e6936.mov",
+  video,
   img2,
   img1,
   "https://castdj-comingsoon.s3.amazonaws.com/khanhviet12121/posts/Sample_Video_1280x720_1mb_ffa3a53275.mp4",
