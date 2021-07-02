@@ -3,7 +3,7 @@
 An image library that's used to show the images, video in beautiful grids.
 Below you will find some information on how to perform common tasks.
 
-![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/1.jpeg?raw=true)
+![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/react-like-posts-fb.gif?raw=true)
 
 # Vesions v1.0.29
 
