@@ -3,7 +3,7 @@
 An image library that's used to show the images, video in beautiful grids.
 Below you will find some information on how to perform common tasks.
 
-![Screenshot](img/1.jpeg)
+![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/react-like-posts-fb.gif?raw=true)
 
 # Vesions v1.0.29
 
@@ -41,14 +41,11 @@ import FbImageOrVideoLibrary from 'react-like-posts-fb'
 
 ## Plugins
 
-| Plugin           | Library                                   |
-| ---------------- | ----------------------------------------- |
-| Typescripts      | [plugins/dropbox/README.md][pldb]         |
-| GitHub           | [plugins/github/README.md][plgh]          |
-| Google Drive     | [plugins/googledrive/README.md][plgd]     |
-| OneDrive         | [plugins/onedrive/README.md][plod]        |
-| Medium           | [plugins/medium/README.md][plme]          |
-| Google Analytics | [plugins/googleanalytics/README.md][plga] |
+| Plugin       | Library                               |
+| ------------ | ------------------------------------- |
+| Typescripts  | [plugins/dropbox/README.md][pldb]     |
+| GitHub       | [plugins/github/README.md][plgh]      |
+| Google Drive | [plugins/googledrive/README.md][plgd] |
 
 ## License
 

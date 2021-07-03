@@ -23,28 +23,35 @@ video {
   cursor: pointer;
   height: 100%;
 }
-.v-container img {
+.v-container img,
+video {
   object-fit: cover;
 }
 .v-col-1 {
   padding-top: 56.2%;
   width: 100%;
 }
-.v-col-2,
-.v-col-4 {
+.v-col-2 {
   width: calc(50% - 4px);
-  padding-top: 37%;
-}
-.v-col-5 {
-  width: calc(50% - 4px);
-  padding-top: 36%;
+  padding-top: 56.3%;
 }
 .v-col-3 {
   width: calc(50% - 4px);
-  padding-top: 30%;
 }
+.v-col-4 {
+  width: calc(33.333% - 4px);
+}
+.v-col-3,
+.v-col-4 {
+  padding-top: 27%;
+}
+.v-col-5 {
+  width: calc(50% - 4px);
+  padding-top: 37%;
+}
+
 .v-three {
-  padding-top: 50%;
+  padding-top: 45%;
   width: 100%;
 }
 .v-three-in-five {

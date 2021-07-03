@@ -92,12 +92,15 @@ export default function ReactLikePostsFB(props: ReactLikePostsFBProps) {
         id={index.toString()}
         className={`v-col-${
           imagesOrVideos.length < 6 ? imagesOrVideos.length : 5
-        } ${imagesOrVideos.length === 2 ? "v-height-two" : ""} ${
-          index === 0 && imagesOrVideos.length === 3 ? "v-three" : ""
-        } ${
+        } 
+        ${imagesOrVideos.length === 2 ? "v-height-two" : ""}
+        ${
+          index === 0 && [3, 4].includes(imagesOrVideos.length) ? "v-three" : ""
+        } 
+        ${
           imagesOrVideos.length >= 5
             ? [0, 1].includes(index)
-              ? "v-height-two"
+              ? ""
               : "v-three-in-five"
             : ""
         }`}
