@@ -1,8 +1,8 @@
 /// <reference types="react" />
-import "./index.css";
+import "./hh.css";
 declare type ReactLikePostsFBProps = {
     imagesOrVideos: Array<string>;
 };
-export default function ReactLikePostsFB(props: ReactLikePostsFBProps): JSX.Element;
-export {};
+declare const ReactLikePostsFB: ({ imagesOrVideos }: ReactLikePostsFBProps) => JSX.Element;
+export default ReactLikePostsFB;
 //# sourceMappingURL=index.d.ts.map

@@ -1,149 +1,140 @@
-import React from "react";
-import { useCallback, useEffect, useState } from "react";
-import "./index.css";
+import React, { useState, useEffect, useCallback } from "react";
+import "./styles.scss";
 type ReactLikePostsFBProps = {
   imagesOrVideos: Array<string>;
 };
-export default function ReactLikePostsFB(props: ReactLikePostsFBProps) {
-  const { imagesOrVideos = [] } = props;
-  const [indexDisplay, setIndexDisplay] = useState<number>(-1);
+
+const ReactLikePostsFB = ({ imagesOrVideos }: ReactLikePostsFBProps) => {
+  const [indexDisplay, setindexDisplay] = useState<number>(-1);
+
+  const isVideo = (src: string) => {
+    const videos = ["mp4", "ogg", "mov"];
+    return videos.some((item) => src.endsWith(`.${item}`));
+  };
 
   const renderVideo = (src: string) => {
-    const elemVideo = document.createElement("video");
-    elemVideo.className = "v-item video";
-    elemVideo.src = src;
+    const elemVideo = document.createElement("video") as HTMLVideoElement;
     elemVideo.controls = true;
+    elemVideo.src = src;
     elemVideo.autoplay = true;
     return elemVideo;
   };
 
   const renderImg = (src: string) => {
-    const elemImg = document.createElement("IMG") as HTMLImageElement;
-    elemImg.className = "v-item img";
+    const elemImg = document.createElement("img") as HTMLImageElement;
     elemImg.src = src;
     return elemImg;
   };
 
-  const handlePrevNext = (e: any, type: string) => {
-    e.preventDefault();
-    const elemContainer = document.querySelector(
-      ".v-main-content"
+  const renderVideoOrImg = useCallback((src: string) => {
+    return isVideo(src) ? renderVideo(src) : renderImg(src);
+  }, []);
+
+  const removeImgOrVideoClone = () => {
+    const elemMainContent = document.querySelector(
+      ".main-content"
     ) as HTMLDivElement;
-    setIndexDisplay((prev: number) => {
-      let i = -1;
-      imagesOrVideos.length !== 1 && elemContainer.firstChild?.remove();
-      if (prev === 0 && type === "prev") {
-        i = imagesOrVideos.length - 1;
-      }
-      if (prev === imagesOrVideos.length - 1 && type === "next") {
-        i = 0;
-      }
-      return i === -1 ? (type === "prev" ? prev - 1 : prev + 1) : i;
-    });
+    elemMainContent?.firstChild?.remove();
   };
 
-  const createElementImgOrVideo = useCallback((type: string, src: string) => {
-    return type === "img" ? renderImg(src) : renderVideo(src);
-  }, []);
+  const handleNext = (e: any) => {
+    e.preventDefault();
+    // check only 1 item
+    if (imagesOrVideos.length > 1) {
+      removeImgOrVideoClone();
+      setindexDisplay((current) =>
+        current === imagesOrVideos.length ? 1 : current + 1
+      );
+    }
+  };
+
+  const handlePrev = (e: any) => {
+    e.preventDefault();
+    // check only 1 item
+    if (imagesOrVideos.length > 1) {
+      removeImgOrVideoClone();
+      setindexDisplay((current) =>
+        current === 1 ? imagesOrVideos.length : current - 1
+      );
+    }
+  };
 
   const handleClose = (e: any) => {
     e.preventDefault();
-    setIndexDisplay(-1);
-    const elemClone = document.querySelector(
-      ".v-container-clone"
-    ) as HTMLDivElement;
-    elemClone.remove();
+    setindexDisplay(-1);
+    const elemContainerClone = document.querySelector(
+      ".react-like-posts-fb-clone"
+    );
+    elemContainerClone?.remove();
   };
 
-  const handleClick = (e: any, index: number) => {
+  const handleClickItem = (e: any, index: number) => {
     e.preventDefault();
-    const elemDiv = document.createElement("div");
+    const elemBtnClose = document.createElement("div");
+    elemBtnClose.classList.add("btn-close");
+    elemBtnClose.addEventListener("click", handleClose);
 
-    const elemClose = document.createElement("div");
-    elemClose.classList.add("v-btn-close");
-    elemClose.addEventListener("click", handleClose);
-    elemDiv.appendChild(elemClose);
+    const elemPrev = document.createElement("div");
+    elemPrev.classList.add("btn-prev");
+    elemPrev.addEventListener("click", handlePrev);
+    imagesOrVideos.length === 1 && elemPrev.classList.add("only-one");
 
-    elemDiv.className = "v-container-clone";
-    const elemButtonPrev = document.createElement("div");
-    elemButtonPrev.addEventListener("click", (e) => handlePrevNext(e, "prev"));
-    elemButtonPrev.classList.add("v-btn-prev");
-    imagesOrVideos.length === 1 && elemButtonPrev.classList.add("v-only-one");
-    elemDiv.appendChild(elemButtonPrev);
+    const elemMainContent = document.createElement("div");
+    elemMainContent.classList.add("main-content");
 
-    setIndexDisplay(index);
+    const elemBtnNext = document.createElement("div");
+    elemBtnNext.classList.add("btn-next");
+    elemBtnNext.addEventListener("click", handleNext);
+    imagesOrVideos.length === 1 && elemBtnNext.classList.add("only-one");
 
-    const elemDivContainer = document.createElement("div");
-    elemDivContainer.classList.add("v-main-content");
-    elemDiv.appendChild(elemDivContainer);
+    const elemtContainer = document.createElement("div");
+    elemtContainer.classList.add("react-like-posts-fb-clone");
 
-    const elemButtonNext = document.createElement("div");
-    elemButtonNext.classList.add("v-btn-next");
-    elemButtonNext.addEventListener("click", (e) => handlePrevNext(e, "next"));
-    imagesOrVideos.length === 1 && elemButtonNext.classList.add("v-only-one");
-    elemDiv.appendChild(elemButtonNext);
-    document.body.appendChild(elemDiv);
-  };
+    elemtContainer.appendChild(elemBtnClose);
+    elemtContainer.appendChild(elemPrev);
+    elemtContainer.appendChild(elemMainContent);
+    elemtContainer.appendChild(elemBtnNext);
 
-  const renderItem = (src: string, index: number) => (
-    <div
-      id={index.toString()}
-      className={`v-col-${
-        imagesOrVideos.length < 6 ? imagesOrVideos.length : 5
-      } ${imagesOrVideos.length === 2 ? "v-height-two" : ""} ${
-        index === 0 && imagesOrVideos.length === 3 ? "v-three" : ""
-      } ${
-        imagesOrVideos.length >= 5
-          ? [0, 1].includes(index)
-            ? "v-height-two"
-            : "v-three-in-five"
-          : ""
-      }`}
-    >
-      <div
-        data-index={
-          index === 4 && imagesOrVideos.length > 5
-            ? `+ ${imagesOrVideos.length - 5}`
-            : ""
-        }
-        className={`v-ctn-img-video ${
-          index === 4 && imagesOrVideos.length > 5 ? `v-bigger-five` : ""
-        }`}
-        onClick={(e) => handleClick(e, index)}
-        onTouchStart={(e) => handleClick(e, index)}
-      >
-        {isVideo(src) ? (
-          <video src={src} controls></video>
-        ) : (
-          <img src={src} alt={src} />
-        )}
-      </div>
-    </div>
-  );
-
-  const isVideo = (src: string) => {
-    const videos = ["mp4", "3gp", "ogg", "mov"];
-    const indexVideo = videos.findIndex((item) => src?.endsWith(`.${item}`));
-    return indexVideo > -1;
+    document.body.appendChild(elemtContainer);
+    setindexDisplay(index);
   };
 
   useEffect(() => {
-    const divContainer = document.querySelector(
-      ".v-main-content"
-    ) as HTMLDivElement;
-    let type = isVideo(imagesOrVideos[indexDisplay]) ? "video" : "img";
+    const elemMainContent = document.querySelector(".main-content");
+    if (elemMainContent && indexDisplay > -1) {
+      const el = renderVideoOrImg(imagesOrVideos[indexDisplay - 1]);
+      elemMainContent.appendChild(el);
+    }
+  }, [imagesOrVideos, indexDisplay, renderVideoOrImg]);
 
-    const element = createElementImgOrVideo(type, imagesOrVideos[indexDisplay]);
-    divContainer?.appendChild(element);
-  }, [createElementImgOrVideo, imagesOrVideos, indexDisplay]);
-
+  const renderimagesOrVideos = (src: string, index: number) => {
+    return (
+      <div
+        className={`col-${
+          imagesOrVideos.length > 5 ? 5 : imagesOrVideos.length
+        } ${imagesOrVideos.length > 5 && index === 5 ? "bigger-5" : ""}`}
+        data-count={imagesOrVideos.length - 5}
+        onClick={(e) => handleClickItem(e, index)}
+        onTouchStart={(e) => handleClickItem(e, index)}
+      >
+        <div className="item">
+          {isVideo(src) ? (
+            <video src={src} controls />
+          ) : (
+            <img src={src} alt="" />
+          )}
+        </div>
+      </div>
+    );
+  };
   return (
-    <div className="v-container">
-      {imagesOrVideos.map((item: string, index: number) => (
+    <div className="react-like-posts-fb">
+      {imagesOrVideos.map((item, index) => (
         <React.Fragment key={index}>
-          {index < 5 ? renderItem(item, index) : null}
+          {index < 5 && renderimagesOrVideos(item, index + 1)}
         </React.Fragment>
       ))}
     </div>
   );
-}
+};
+export default ReactLikePostsFB;
