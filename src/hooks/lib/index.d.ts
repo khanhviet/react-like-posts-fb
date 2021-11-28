@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import "./hh.css";
+import "./index.scss";
 declare type ReactLikePostsFBProps = {
     imagesOrVideos: Array<string>;
 };

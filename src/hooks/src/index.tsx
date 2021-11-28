@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "./styles.scss";
+import "./index.css";
 type ReactLikePostsFBProps = {
   imagesOrVideos: Array<string>;
 };
 
 const ReactLikePostsFB = ({ imagesOrVideos }: ReactLikePostsFBProps) => {
-  const [indexDisplay, setindexDisplay] = useState<number>(-1);
+  const [indexDisplay, setIndexDisplay] = useState<number>(-1);
 
   const isVideo = (src: string) => {
     const videos = ["mp4", "ogg", "mov"];
@@ -42,7 +42,7 @@ const ReactLikePostsFB = ({ imagesOrVideos }: ReactLikePostsFBProps) => {
     // check only 1 item
     if (imagesOrVideos.length > 1) {
       removeImgOrVideoClone();
-      setindexDisplay((current) =>
+      setIndexDisplay((current) =>
         current === imagesOrVideos.length ? 1 : current + 1
       );
     }
@@ -53,7 +53,7 @@ const ReactLikePostsFB = ({ imagesOrVideos }: ReactLikePostsFBProps) => {
     // check only 1 item
     if (imagesOrVideos.length > 1) {
       removeImgOrVideoClone();
-      setindexDisplay((current) =>
+      setIndexDisplay((current) =>
         current === 1 ? imagesOrVideos.length : current - 1
       );
     }
@@ -61,7 +61,7 @@ const ReactLikePostsFB = ({ imagesOrVideos }: ReactLikePostsFBProps) => {
 
   const handleClose = (e: any) => {
     e.preventDefault();
-    setindexDisplay(-1);
+    setIndexDisplay(-1);
     const elemContainerClone = document.querySelector(
       ".react-like-posts-fb-clone"
     );
@@ -96,7 +96,7 @@ const ReactLikePostsFB = ({ imagesOrVideos }: ReactLikePostsFBProps) => {
     elemtContainer.appendChild(elemBtnNext);
 
     document.body.appendChild(elemtContainer);
-    setindexDisplay(index);
+    setIndexDisplay(index);
   };
 
   useEffect(() => {
