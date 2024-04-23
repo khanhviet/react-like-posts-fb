@@ -57,6 +57,6 @@ MIT
 
 ## Author
 
-LE KHANH VIET ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/hearts.png?raw=true) ...
+LE KHANH VIET ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/heart.png?raw=true) ...
 
 **Software, hello guys!**

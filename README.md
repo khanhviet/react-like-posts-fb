@@ -53,10 +53,12 @@ MIT
 
 ## Country
 
-VIETNAM ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/VietNam.png?raw=true)
+![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/VietNam.png?raw=true)
+
+<p>----- VIETNAM -----</p>
 
 ## Author
 
-LE KHANH VIET
+LE KHANH VIET ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/hearts.png?raw=true) ...
 
 **Software, hello guys!**
