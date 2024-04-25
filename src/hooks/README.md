@@ -52,8 +52,8 @@ import FbImageOrVideoLibrary from 'react-like-posts-fb'
 MIT
 
 ## Country
-![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/VietNam.png?raw=true)
-<p>----- VIETNAM -----</p>
+![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/VietNam.svg?raw=true)
+<p>----------- VIETNAM -----------</p>
 
 ## Author
 
