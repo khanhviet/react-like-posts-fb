@@ -40,11 +40,11 @@ import FbImageOrVideoLibrary from 'react-like-posts-fb'
 MIT
 
 ## Country
-![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/vietname-flag.gif?raw=true)
-<p>--------------- VIETNAM ---------------</p>
+![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/flag-vietnam.gif?raw=true)
+<p>------------------------------------- VIETNAM -------------------------------------</p>
 
 ## Author
 
-LE KHANH VIET ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/heart.png?raw=true) ...
+LE KHANH VIET (Viet Stupid) ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/heart.png?raw=true) ...
 
-**Software, hello guys!**
+**Sky Software, hello guys!**
