@@ -39,12 +39,20 @@ import FbImageOrVideoLibrary from 'react-like-posts-fb'
 
 MIT
 
+## Company
+
+FPT Software
+
+## My parents
+
+![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/myparents.gif?raw=true)
+
 ## Country
 ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/flag-vietnam.gif?raw=true)
-<p>------------------------------------- VIETNAM -------------------------------------</p>
+<p>---------- VIETNAM ----------</p>
 
 ## Author
 
-LE KHANH VIET (Viet Stupid) ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/heart.png?raw=true) ...
+VIET LE KHANH ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/heart.png?raw=true) ...
 
 **Sky Software, hello guys!**
