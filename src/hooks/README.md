@@ -53,6 +53,6 @@ FPT Software
 
 ## Author
 
-VIET LE KHANH ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/heart.png?raw=true) ...
+VIET LE KHANH (Viet Stupid)![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/heart.png?raw=true) ...
 
 **Sky Software, hello guys!**
