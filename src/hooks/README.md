@@ -46,6 +46,7 @@ FPT Software
 ## My parents
 
 ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/myparents.gif?raw=true)
+<div>Lê Xuân Bình + Võ Thị Ái Lan<div>
 
 ## Country
 ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/flag-vietnam.gif?raw=true)
