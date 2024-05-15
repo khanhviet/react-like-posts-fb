@@ -1,3 +1,4 @@
+# Date of creation: June 25th, 2021
 # react-like-posts-fb
 
 An image library that's used to show the images, video in beautiful grids.
@@ -43,14 +44,18 @@ MIT
 
 FPT Software
 
-## My parents
+## My family
 
 ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/myparents.gif?raw=true)
 <div>Lê Xuân Bình + Võ Thị Ái Lan<div>
 
-## Country
+## My Country
 ![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/flag-vietnam.gif?raw=true)
-<p>---------- VIETNAM ----------</p>
+<p>---------- Vietnam ----------</p>
+
+## Country of the world
+![Screenshot](https://github.com/khanhviet/react-like-posts-fb/blob/master/usa-flag-american.gif?raw=true)
+<p>---------- United States of America ----------</p>
 
 ## Author
 
